@@ -37,14 +37,17 @@ A Ferramenta vai receber uma propriedade do css de cada vez, e imprimir no termi
 ### Exemplo:
 
 'Digite uma propriedade css, ou digite "parar" para sair':
+
 font-size 
 [Enter]
 
 'Digite uma propriedade css, ou digite "parar" para sair':
+
 font-weight
 [Enter]
 
 'Digite uma propriedade css, ou digite "parar" para sair':
+
 font-style
 [Enter]
 
@@ -57,14 +60,18 @@ parar
 Saída immpressa no terminal:
 
 font-size
+
 font-weight
+
 font-style
+
 Programa Encerrado
+
 ## Referências ✅
 
 [Documentação Node](https://nodejs.org/en/)
 
-[Documentação readline-sync](ttps://www.npmjs.com/package/readline-sync)
+[Documentação readline-sync](https://www.npmjs.com/package/readline-sync)
 
 
 ## Agradecimentos 💕
