@@ -57,7 +57,7 @@ parar
 
 ### Saída
 
-Saída immpressa no terminal:
+Saída impressa no terminal:
 
 font-size
 
@@ -76,4 +76,4 @@ Programa Encerrado
 
 ## Agradecimentos 💕
 
-Projeto desenvolvido com fins acadêmicos, como o projeto do modulo da Resilia Educação. Sinta-se a vontade para utiliza-lo. 
+Projeto desenvolvido com fins acadêmicos, como o projeto individual do modulo 4 da Resilia Educação. Sinta-se a vontade para utiliza-lo. 
