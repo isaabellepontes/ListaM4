@@ -1,40 +1,56 @@
 import { createInterface } from 'readline';
 
 class CssLista {
+    #valid_css_properties;
+    #css;
+    #rl;
     constructor(){
-        this.css = [];
-        this.rl = createInterface({
+        this.#valid_css_properties = [
+            'font',
+            'text',
+            'letter-spacing',
+            'color'
+        ];
+        this.#css = [];
+        this.#rl = createInterface({
             input: process.stdin,
             output: process.stdout
         });
     }
     start() {
         console.log('Digite uma propriedade css, ou digite "parar" para sair');
-        this.rl.on('line', input => {
-            if (input.toLowerCase() === 'parar') {
-                this.rl.close();
-            } else {
-                if (!this.isNumeric(input)) {
-                    this.addCss(input);
-                } else {
-                    console.log('Entrada inválida. Números não são permitidos.');
-                }
-            }
-        });
-        this.rl.on('close', () => {
-            this.showSortedCss();
+        this.#line();
+        this.#rl.on('close', () => {
+            this.#showSortedCss();
             console.log('Programa Encerrado');
         });
     }
-    addCss(css) {
-        this.css.push(css);
+    #line() {
+        this.#rl.on('line', input => {
+            if (input.toLowerCase() === 'parar') {
+                this.#rl.close();
+                return;
+            }
+            if (this.#isNumeric(input)) {
+                console.log('Entrada inválida. Números não são permitidos.');
+                return;
+            }
+            this.#addCss(input);
+        });
     }
-    showSortedCss() {
-        const sortedCss = this.css.sort();
+    #addCss(css) {
+        if (!this.#valid_css_properties.includes(css)) {
+            console.log(`O valor ${css} não é uma propriedade do css`);
+            return;
+        }
+        this.#css.push(css);
+    }
+    #showSortedCss() {
+        const sortedCss = this.#css.sort();
         console.log('Css Ordenado:');
         sortedCss.forEach(css => console.log(css));
     }
-    isNumeric(input) {
+    #isNumeric(input) {
         return !isNaN(parseFloat(input)) && isFinite(input);
     }
 }
